@@ -1,0 +1,62 @@
+#loader{
+   visibility:hidden;
+}
+#f1_upload_process{
+   z-index:100;
+   visibility:hidden;
+   position:absolute;
+   text-align:center;
+   width:600px;
+   height:0px;
+   margin:0;
+}
+.textboxStyled {
+      font: 12px "Trebuchet MS", verdana, tahoma, sans-serif;
+      color:#000; 
+      font-weight:bold;
+      padding:2px;
+     
+      height: 24px;
+}
+a .img{
+  border: 1px solid #fff;
+}
+
+
+.upbutton-wrapper {
+  background: #E0E0E0;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#E9E9E9', endColorstr='#D7D7D7');
+  background: -webkit-gradient(linear, left top, left bottom, from(#E9E9E9), to(#D7D7D7)); 
+  background: -moz-linear-gradient(top,  #E9E9E9,  #D7D7D7); 
+  padding: 8px;
+  -webkit-box-shadow: inset 0px 2px 2px #B2B3B5, 0px 1px 0 #fff;
+  -moz-box-shadow: inset 0px 2px 2px #B2B3B5, 0px 1px 0 #fff;
+  -o-box-shadow: inset 0px 2px 2px #B2B3B5, 0px 1px 0 #fff;
+  -khtml-box-shadow: inset 0px 2px 2px #B2B3B5, 0px 1px 0 #fff;
+  box-shadow: inset 0px 2px 2px #B2B3B5, 0px 1px 0 #fff;
+  -webkit-border-radius: 50px; 
+  -moz-border-radius: 50px; 
+  -o-border-radius: 50px; 
+  -khtml-border-radius: 50px;
+  border-radius: 50px;
+}
+
+.upbutton {
+  display: block;
+
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 14px;
+  text-align: center;
+  line-height: 34px;
+  text-decoration: none;
+  -webkit-border-radius: 50px; 
+  -moz-border-radius: 50px; 
+  -o-border-radius: 50px; 
+  -khtml-border-radius: 50px;
+  border-radius: 50px;
+  font-weight: bold;
+}
+
+.upbutton:hover, .upbutton:active {
+  border: none;
+}
