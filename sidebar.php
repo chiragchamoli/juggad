@@ -2,14 +2,24 @@
 
 
 <ul>
-<strong>The Team</strong>
+<strong title="You team members, you can click on a member to see all posts.">The Team</strong>
+
+
 <ul>
 <?php wp_list_authors('show_fullname=1&optioncount=1&exclude_admin=0'); ?>
 </ul>
 
+<div style="margin-top:10px;" class="alert alert alert-block">
 
+  <h4>Quick Help</h4>
+  <p>
+  	<li>You can <strong>auto embed</strong> youtube, vimeo, github gist just by adding the link in your update</li>
+  	<li>If your attachment are images just hover the links to see preview.</li>
+  </p>
+  
+</div>
 
-
+<!-- 
 <div style="margin-top:10px">
 <?php 
 
@@ -25,7 +35,7 @@ if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar() ) {
 
 ?>
 	
-</div>
+</div> -->
 
 
 <div style="clear: both;"></div>

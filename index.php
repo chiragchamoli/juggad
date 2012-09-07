@@ -21,11 +21,6 @@ if($_GET['page']=='ajax')
 	}
 	exit;
 }
-elseif($_GET['page']=='notify')
-{
-	include_once(TEMPLATEPATH.'/notify.php');
-	exit;
-}
 elseif($_GET['page']=='last_post_meta')
 {
 	global $wpdb;
@@ -49,7 +44,7 @@ if ( have_posts() ):
 <?php
 	while( have_posts() ):
 	    the_post();
-        require dirname(__FILE__) . '/entry.php';
+        require dirname(__FILE__) . '/inc/entry.php';
     endwhile; // have_posts
 ?>
 </ul>
@@ -71,7 +66,7 @@ endif; // have posts
 <style type="text/css">
 	
 .uncool{
-	background-color: lightyellow;
+	background-color: white;
 	position: fixed;
 	height: 100%;
 	width:100%;
@@ -82,7 +77,7 @@ endif; // have posts
 	position: absolute;
 	top:100px;
 	left: 100px;
-	font-size: 20pt;
+	font-size: 16pt;
 
 }
 </style>

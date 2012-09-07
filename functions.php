@@ -84,24 +84,13 @@ add_action( 'init', 'prologue_init' );
 function prologue_javascript() {
 
     $prologue_tagsuggest = true;
-
     $prologue_inlineedit = true;
-
-    
-
     wp_enqueue_script( 'jquery-color' );
-
 	wp_enqueue_script( 'comment-reply' );
-
-
-
 	if ( is_front_page() && $prologue_tagsuggest && is_user_logged_in() )
-
 		wp_enqueue_script( 'suggest' );
 
-		
-
-	wp_enqueue_script( 'p2js', get_bloginfo('template_directory' ).'/inc/p2.js', array( 'jquery' ), '200903301' );
+	wp_enqueue_script( 'p2js', get_bloginfo('template_directory' ).'/inc/p2.js', array( 'jquery' ), '201203301' );
 
 	wp_localize_script( 'p2js', 'p2txt', array(
 
@@ -139,11 +128,11 @@ function prologue_javascript() {
 
 	if ( ( $prologue_inlineedit ) && is_user_logged_in() )
 
-		wp_enqueue_script( 'jeditable', get_bloginfo('template_directory').'/inc/jquery.jeditable.js', array( 'jquery' )  );
+    wp_enqueue_script( 'jeditable', get_bloginfo('template_directory').'/inc/jquery.jeditable.js', array( 'jquery' ));
+	wp_enqueue_script( 'bootstrap', get_bloginfo('template_directory' ).'/inc/bootstrap.min.js', array( 'jquery' ));
+	wp_enqueue_script( 'scrollit', get_bloginfo('template_directory').'/inc/jquery.scrollTo-min.js', array( 'jquery' ));
+	wp_enqueue_script( 'imgpreview', get_bloginfo('template_directory').'/inc/imgpreview.full.jquery.js', array( 'jquery' ));
 
-
-
-	wp_enqueue_script( 'scrollit', get_bloginfo('template_directory').'/inc/jquery.scrollTo-min.js', array( 'jquery' )  );
 
 }
 
@@ -279,9 +268,8 @@ function prologue_plugin_menu() {
 		update_option( 'post_attachment', '1' );
 		update_option( 'post_notification', '1' );
   }
-  add_theme_page('GTD Options', 'GTD Options', 8, __FILE__, 'prologue_options_page');
-
-}
+  add_theme_page('Jugad Options', 'Jugad Options', 8, __FILE__, 'prologue_options_page');
+ }
 
 
 
@@ -294,15 +282,9 @@ function prologue_options_page() {
     // variables for the field and option names 
 
     $opt_name = 'prologue_show_titles';
-
     $hidden_field_name = 'prologue_submit_hidden';
-
     $data_field_name = 'prologue_titles';
-
-
-
     // Read in existing option value from database
-
     $opt_val = get_option( $opt_name );
 	$feed_access = get_option( 'feed_access' );
 	$redirect_afterlogin = get_option( 'redirect_afterlogin' );
@@ -387,99 +369,20 @@ function prologue_options_page() {
 
 <div class="updated"><p><strong><?php _e('Options saved.', 'p2' ); ?></strong></p></div>
 
-<?php
-
-
-
-    }
-
-
+<?php   }
 
     // Now display the options editing screen
 
-
-
     echo '<div class="wrap">';
-
-
-
     // header
-
-
-
-    echo "<h2>" . __( 'GTD Options', 'p2' ) . "</h2>";
-
-
-
-    // options form
-
-    
+    echo "<h2>" . __( 'Jugad Options', 'p2' ) . "</h2>";
+   // options form
 
     ?>
 
 
 
-<form name="form1" method="post" action="<?php echo str_replace( '%7E', '~', $_SERVER['REQUEST_URI']); ?>">
-
-<input type="hidden" name="<?php echo $hidden_field_name; ?>" value="Y" />
-
-
-
-<p>
-
-	<input id="prologue-display-titles" type="checkbox" name="<?php echo $data_field_name; ?>" <?php if($opt_val == 1) echo 'checked="checked"'; ?> value="1" />
-
-	<label for="prologue-display-titles"><?php _e("Display titles", 'p2' ); ?></label> 
-
-</p>
-<p>
-<input id="prologue-display-titles1" type="checkbox" name="feed_access" value="1" <?php if($feed_access == 'require_login'){?> checked="checked"<?php }?> /> 
-<label for="prologue-display-titles1"><?php _e("Private Blog", 'p2' ); ?> </label>
-<?php /*?><select name="feed_access">
-<option value="open_feed" <?php if($feed_access == 'open_feed'){?> selected="selected"<?php }?>>Open Feeds</option>
-<option value="require_login" <?php if($feed_access == 'require_login'){?> selected="selected"<?php }?>>Require User Login</option>
-</select><?php */?>
-</p>
-<p>
-<input id="prologue-display-titles2" type="checkbox" name="post_attachment" value="1" <?php if($post_attachment == '1'){?> checked="checked"<?php }?> />
-<label for="prologue-display-titles2"><?php _e("Enable File Attachment", 'p2' ); ?></label> 
-<?php /*?><select name="post_attachment">
-<option value="1" <?php if($post_attachment == '1'){?> selected="selected"<?php }?>>Yes</option>
-<option value="0" <?php if($post_attachment == '0'){?> selected="selected"<?php }?>>No</option>
-</select><?php */?>
-</p>
-<p>
-<input id="prologue-display-titles3" type="checkbox" name="post_notification" value="1" <?php if($post_notification == '1'){?> checked="checked"<?php }?> /> 
-<label for="prologue-display-titles3"><?php _e("Enable User Notifications", 'p2' ); ?></label> 
-<?php /*?><input type="radio" name="post_notification" value="1" <?php if($post_notification == '1'){?> checked="checked"<?php }?> /> Yes
-&nbsp;<input type="radio" name="post_notification" value="0" <?php if($post_notification == '0'){?> checked="checked"<?php }?> /> No<?php */?>
-
-<p>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="prologue-display-titles4"><?php _e("From Email", 'p2' ); ?></label> 
-    <input type="text" name="site_email" value="<?php echo $site_email;?>" />
-
-</p>
-<p>
-	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<label for="prologue-display-titles5"><?php _e("From Email Name", 'p2' ); ?></label> 
-    <input type="text" name="site_email_name" value="<?php echo $site_email_name;?>" />
-
-</p>
-
-<?php /*?><select name="post_notification">
-<option value="1" <?php if($post_notification == '1'){?> selected="selected"<?php }?>>Yes</option>
-<option value="0" <?php if($post_notification == '0'){?> selected="selected"<?php }?>>No</option>
-</select><?php */?>
-</p>
-
-<p class="submit">
-
-<input type="submit" name="Submit" value="<?php _e('Update Options', 'p2' ) ?>" />
-
-</p>
-
-
-
-</form>
+<p>Reserved for future</p>
 
 </div>
 
@@ -825,11 +728,11 @@ function prologue_the_title($before = '<h2>', $after = '</h2>') {
 
 	if( is_int( strpos($post->post_title, 'http') ) )  {
 
-		$split = str_split( $post->post_content, strpos($post->post_content, 'http'));
+		@$split = str_split( $post->post_content, strpos($post->post_content, 'http'));
 
 		$post->post_content = $split[0];
 
-		$split2 = str_split( $post->post_title, strpos($post->post_title, 'http'));
+		@$split2 = str_split( $post->post_title, strpos($post->post_title, 'http'));
 
 		$post->post_title = $split2[0];
 
@@ -2792,4 +2695,37 @@ if ( defined('IS_WPCOM') && IS_WPCOM ) {
     add_filter( 'prologue_poweredby_link', returner('<a href="http://wordpress.com/">'.__('Blog at WordPress.com', 'p2').'.</a>') );
 
 }
+
+function admin_default_page() {
+  return get_site_url();
+}
+
+add_filter('login_redirect', 'admin_default_page');
+
+
+/**
+* Usage:
+* Paste a gist link into a blog post or page and it will be embedded eg:
+* https://gist.github.com/2926827
+*
+* If a gist has multiple files you can select one using a url in the following format:
+* https://gist.github.com/2926827?file=embed-gist.php
+*/
+ 
+wp_embed_register_handler( 'gist', '/https:\/\/gist\.github\.com\/(\d+)(\?file=.*)?/i', 'wp_embed_handler_gist' );
+ 
+function wp_embed_handler_gist( $matches, $attr, $url, $rawattr ) {
+ 
+$embed = sprintf(
+'<script type="text/javascript" src="https://gist.github.com/%1$s.js%2$s"></script>',
+esc_attr($matches[1]),
+esc_attr($matches[2])
+);
+ 
+return apply_filters( 'embed_gist', $embed, $matches, $attr, $url, $rawattr );
+}
+
+
+
+
 

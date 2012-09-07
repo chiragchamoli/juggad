@@ -1,9 +1,9 @@
 	<div style="clear: both;"></div>
 </div> <!-- // wrapper -->
-
+</div></div>
 <div id="footer">
 	<p>
-		Hand made theme, by <a href="https://chiragchamoli.com">chirag chamoli</a>, code is avilable here <a href="">jugad(TBD)</a>
+		Hand made theme, by <a href="https://chiragchamoli.com">chirag chamoli</a>, code is avilable here <a href="https://github.com/chiragchamoli/juggad">Jugaad</a>
 	</p>
 </div>
 <div id="notify"></div>
@@ -20,22 +20,7 @@
 	</dl>
 </div>
 <?php wp_footer(); ?>
-
-
-
-<script>
-var editor = new wysihtml5.Editor("posttext", { // id of textarea element
-  toolbar:      "wysihtml5-toolbar", // id of toolbar element
-  parserRules:  wysihtml5ParserRules // defined in parser rules set 
-});
-
-editor.observe("load", function() {
-  editor.composer.element.addEventListener("keyup", function() {
-    editor.composer.iframe.style.height = editor.composer.element.scrollHeight + "px";
-  });
-});
-
-</script>
+ 
 
 </body>
 </html>

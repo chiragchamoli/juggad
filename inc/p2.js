@@ -73,22 +73,37 @@ jQuery(function($) {
 		},
 			success: function(response) 
 			{
-				if(response)
+
+				if(response!= '')
 				{
+					
 					var my_array=response.split(",");
-					var path1='';
-                             
-					for(i=0;i<my_array.length;i++)
+
+					if(my_array.length == 1)
 					{
-						var attachpath = my_array[i];
-						var att_array=attachpath.split("/");
-						
-						path1 = path1 +  '<li class="attachment_li"> <a target="_blank" href="'+ my_array[i] +'">'+att_array[att_array.length-1]+'</a> </li>'
+						if(my_array[0].length == 4)
+						{	
+							path1 = '<div class="postcontent_attach"><p class="attach"> Attachement</p><ul class="file_list2">' + " No Attachements " + '</ul></div>';
+							var attstr = path1;
+							spanidvar = 'attachmentid_span'+timestamp;
+							document.getElementById(spanidvar).innerHTML= attstr;	
+
+						}
+						else{
+							var path1='';
+							for(i=0;i<my_array.length;i++)
+							{
+								var attachpath = my_array[i];
+								var att_array=attachpath.split("/");
+								path1 = path1 +  '<li class="attachment_li"> <a target="_blank" href="'+ my_array[i] +'">'+att_array[att_array.length-1]+'</a> </li>'
+							}
+							path1 = '<div class="postcontent_attach"><p class="attach"> Attachement</p><ul class="file_list2">' + path1 + '</ul></div>';
+							var attstr = path1;
+							spanidvar = 'attachmentid_span'+timestamp;
+							document.getElementById(spanidvar).innerHTML= attstr;
+						}
 					}
-					path1 = '<div class="postcontent_attach"><p class="attach"> Attachement</p><ul class="file_list2">' + path1 + '</ul></div>';
-					var attstr = path1;
-					spanidvar = 'attachmentid_span'+timestamp;
-					document.getElementById(spanidvar).innerHTML= attstr;
+					
 				}
 			}
 		});
@@ -892,6 +907,26 @@ jQuery(function($) {
 			}
 		}
 	}
+
+	$("#wpadminbar").hide();
+	$('.dropdown-toggle').dropdown();
+	//$("ul.file_list2").find('a[href$="jpg"], a[href$="jpeg"], a[href$="png"], a[href$="gif"]').alert(1);
+    
+
+    $('ul.file_list2 li a').imgPreview({
+    	imgCSS: { width: 200 }
+	});
+
+
+
+
+
+
+
+
+
+
+
 
 	// Check if recent comments widget is loaded
 	if	($("#recentcommentstable").length != 0) {

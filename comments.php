@@ -14,7 +14,7 @@ if ( post_password_required() ) { ?>
 </ul>
 <?php if( 'open' == $post->comment_status ) { ?>
 	<div id="respond" class="replying">
-   		<?php require dirname( __FILE__ ) . '/comment-form.php'; ?>
+   		<?php require dirname( __FILE__ ) . '/inc/comment-form.php'; ?>
 	</div>
 <?php } ?>
 <?php

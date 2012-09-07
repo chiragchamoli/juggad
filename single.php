@@ -5,7 +5,7 @@
 			<ul id="postlist">
 				<?php 
 				while( have_posts() ): the_post();
-        			require dirname(__FILE__) . '/entry.php';
+        			require dirname(__FILE__) . '/inc/entry.php';
     			endwhile; // have_posts
 				?>
 			</ul>

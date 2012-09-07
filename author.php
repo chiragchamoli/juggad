@@ -16,7 +16,7 @@ $author = isset($_GET['author_name'])?  get_userdatabylogin( $author_name ) : ge
 	if ( have_posts() ):
 		while( have_posts() ):
 			the_post( );
-            require dirname(__FILE__) . '/entry.php';
+            require dirname(__FILE__) . '/inc/entry.php';
 	    endwhile; // have_posts
     endif; // have_posts
 ?>
