@@ -1,6 +1,6 @@
 ## Juggad – Wordpress Theme for Team Collaboration 
 
-# Jugaad
+## What is Jugaad
 
 Jugad is a wordpress theme which turns your wordpress blog in an awesome collabration platform. This is well suited for internal teams, specially when emails are not a good option. We at [aahho](http://aahho.com/) have stopped relying on the email completely for quite sometime now do most of our communications via Jugaad. 
 
