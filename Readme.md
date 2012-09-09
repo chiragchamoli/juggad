@@ -1,4 +1,3 @@
-
 ## Juggad – Wordpress Theme for Team Collaboration 
 
 # Jugaad
@@ -14,7 +13,7 @@ Jugad is a wordpress theme which turns your wordpress blog in an awesome collabr
 3. Add users
 
 
-## Features
+# Features
 
 We have kept the feature set as minimmal as possible, yet powerful. 
 
