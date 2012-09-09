@@ -1,19 +1,30 @@
+
+## Juggad – Wordpress Theme for Team Collaboration 
+
 # Jugaad
 
-Jugaad is a self hosted internal tool based on the open wordpress stack. We at [aahho](http://aahho.com/) have stopped relying on the email completely for quite sometime now do most of our communications via Jugaad platform. 
+Jugad is a wordpress theme which turns your wordpress blog in an awesome collabration platform. This is well suited for internal teams, specially when emails are not a good option. We at [aahho](http://aahho.com/) have stopped relying on the email completely for quite sometime now do most of our communications via Jugaad. 
 
-## Feature Set
+[Jugaad on Github ](https://github.com/chiragchamoli/juggad)
 
-* Free
-* Self Hosted and Managed
-* Almost real-time 
+# Getting started
+
+1. Install [wordpress](http://wordpress.org/download/)
+2. Clone the repo https://github.com/chiragchamoli/juggad.git in the your themes folder
+3. Add users
+
+
+## Features
+
+We have kept the feature set as minimmal as possible, yet powerful. 
+
+* You can share soure code via [gist](https://gist.github.com/)
+* Almost in real-time 
 * Upload documents 
-* Embed youtube, vimeo, gists etc
-* Works on mobiles
+* Embed youtube and vimeo on the fly
+* Works on mobiles devices
 * This is built on Wordpress you can take advantage of the vast free and paid plugins
 
-You are free to use this inside your orgs. Will be pushing updates regularly. 
+I recommend you clone the repo as we'll be pushing updates regularly. 
 
-
-> What is Jugaad: Jugaad means creative idea, Quick Alternate way to solve or Fix complex or expensive problem. Jugaad is very famous in India and now use by many others countries too. So when Joanna Turnbull, managing editor, English Dictionaries, Oxford University Press (OUP),UK, visited India for the English workshop in pune (India) clear that there are many words in English from the Indian usage and Jugaad is one from that.
-
+If you like this follw me on [ADN](https://alpha.app.net/chirag) or [Twitter](http://twitter.com/chiragchamoli).
