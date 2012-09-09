@@ -6,14 +6,14 @@ Jugad is a wordpress theme which turns your wordpress blog in an awesome collabr
 
 [Jugaad on Github ](https://github.com/chiragchamoli/juggad)
 
-# Getting started
+## Getting started
 
 1. Install [wordpress](http://wordpress.org/download/)
 2. Clone the repo https://github.com/chiragchamoli/juggad.git in the your themes folder
 3. Add users
 
 
-# Features
+## Features
 
 We have kept the feature set as minimmal as possible, yet powerful. 
 
